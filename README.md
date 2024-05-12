@@ -1,4 +1,5 @@
 # voyager-hilt-ext
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.qdsfdhvh/voyager-hilt-ext-compiler/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.qdsfdhvh/voyager-hilt-ext-compiler)
 
 This is a Hilt extension for [Voyager](https://github.com/adrielcafe/voyager).
 
@@ -26,7 +27,7 @@ dependencies {
 
 ### @HiltScreenModel
 
-Just like @HiltViewModel, but for Voyager ScreenModel.
+Just like `@HiltViewModel`, but for Voyager ScreenModel.
 
 ```kotlin
 @HiltScreenModel
