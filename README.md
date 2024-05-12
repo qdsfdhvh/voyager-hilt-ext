@@ -6,14 +6,19 @@ This is a Hilt extension for [Voyager](https://github.com/adrielcafe/voyager).
 
 Add the following dependency to your `build.gradle.kts` file:
 
-```kotlin
+```diff
 plugins {
     id("com.google.devtools.ksp") version "<KSP_VERSION>"
+    id("com.google.dagger.hilt.android") version "<HILT_VERSION>"
 }
 
 dependencies {
-    compileOnly("io.github.qdsfdhvh:voyager-hilt-ext-anootations:<VERSION>")
-    ksp("io.github.qdsfdhvh:voyager-hilt-ext-compiler:<VERSION>")
+    implementation("com.google.dagger:hilt-android:<HILT_VERSION>")
+    ksp("com.google.dagger:hilt-compiler:<HILT_VERSION>")
+    ksp("com.google.dagger:dagger-compiler:<HILT_VERSION>")
+
++    compileOnly("io.github.qdsfdhvh:voyager-hilt-ext-anootations:<VERSION>")
++    ksp("io.github.qdsfdhvh:voyager-hilt-ext-compiler:<VERSION>")
 }
 ```
 
