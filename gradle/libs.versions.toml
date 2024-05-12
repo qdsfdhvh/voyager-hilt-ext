@@ -1,0 +1,36 @@
+[versions]
+agp = "8.4.0"
+kotlin = "1.9.0"
+junit = "4.13.2"
+androidx-activityCompose = "1.9.0"
+compose = "1.6.7"
+composeMaterial3 = "1.2.1"
+
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activityCompose" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "composeMaterial3" }
+androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
+androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+
+[bundles]
+androidx-compose = [
+    "androidx-compose-ui",
+    "androidx-compose-foundation",
+    "androidx-compose-material3",
+]
+androidx-compose-test = [
+    "androidx-compose-ui-test-manifest",
+    "androidx-compose-ui-tooling",
+    "androidx-compose-ui-tooling-preview",
+]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
