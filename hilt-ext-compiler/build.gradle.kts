@@ -1,5 +1,7 @@
 plugins {
   alias(libs.plugins.jetbrains.kotlin.jvm)
+  alias(libs.plugins.maven.publish)
+  alias(libs.plugins.dokka)
 }
 
 java {

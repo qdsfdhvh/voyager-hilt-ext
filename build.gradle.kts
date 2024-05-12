@@ -1,3 +1,6 @@
+import com.vanniktech.maven.publish.MavenPublishBaseExtension
+import com.vanniktech.maven.publish.SonatypeHost
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
   alias(libs.plugins.android.application) apply false
@@ -7,6 +10,23 @@ plugins {
   alias(libs.plugins.ksp) apply false
   alias(libs.plugins.dagger.hilt) apply false
   alias(libs.plugins.spotless)
+  alias(libs.plugins.maven.publish) apply false
+  alias(libs.plugins.dokka)
+}
+
+allprojects {
+  group = "io.github.qdsfdhvh"
+  version = "1.0.0"
+  plugins.withId("com.vanniktech.maven.publish") {
+    configure<MavenPublishBaseExtension> {
+      publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+      signAllPublications()
+      pom {
+        name.set("Voyager Hilt Extensions")
+        description.set("Some extensions of voyager-hilt.")
+      }
+    }
+  }
 }
 
 spotless {
