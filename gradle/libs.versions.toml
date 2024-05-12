@@ -1,10 +1,17 @@
 [versions]
+jvmToolchain = "17"
 agp = "8.4.0"
-kotlin = "1.9.0"
+kotlin = "1.9.22"
+ksp = "1.9.22-1.0.17"
+kotlinpoet = "1.14.2"
+spotless = "6.25.0"
+ktlint = "1.2.1"
 junit = "4.13.2"
 androidx-activityCompose = "1.9.0"
 compose = "1.6.7"
 composeMaterial3 = "1.2.1"
+voyager = "1.1.0-alpha04"
+hilt = "2.51"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -15,6 +22,14 @@ androidx-compose-material3 = { module = "androidx.compose.material3:material3", 
 androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "compose" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
+kotlinpoet-ksp = { module = "com.squareup:kotlinpoet-ksp", version.ref = "kotlinpoet" }
+voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
+voyager-screenModel = { module = "cafe.adriel.voyager:voyager-screenmodel", version.ref = "voyager" }
+voyager-hilt = { module = "cafe.adriel.voyager:voyager-hilt", version.ref = "voyager" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 
 [bundles]
 androidx-compose = [
@@ -27,10 +42,17 @@ androidx-compose-test = [
     "androidx-compose-ui-tooling",
     "androidx-compose-ui-tooling-preview",
 ]
+voyager = [
+    "voyager-navigator",
+    "voyager-screenModel",
+    "voyager-hilt",
+]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
